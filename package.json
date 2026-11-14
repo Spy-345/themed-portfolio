@@ -8,7 +8,9 @@
     "build": "next build --webpack",
     "start": "next start --port 3001",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:mobile": "playwright test",
+    "audit:mobile": "node scripts/mobile-audit.mjs"
   },
   "dependencies": {
     "@react-three/drei": "latest",
@@ -20,6 +22,7 @@
     "three": "latest"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.0",
     "@tailwindcss/postcss": "latest",
     "@types/node": "latest",
     "@types/react": "latest",

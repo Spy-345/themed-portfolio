@@ -10,7 +10,7 @@ function describeScan(element:Element){
  if(element.closest('.skill-token'))return `Technology identified: ${short}.`;
  const project=element.closest('.project');if(project)return `Project found: ${project.querySelector('h3')?.textContent||short}.`;
  if(element.closest('.opportunity-card'))return `Opportunity detected: ${element.closest('.opportunity-card')?.querySelector('h3')?.textContent||short}`;
- const link=element.closest('a');if(link){const href=link.getAttribute('href')||'';if(href.startsWith('mailto:'))return 'Contact channel found: email Shivam.';if(href.includes('/resume/'))return 'Résumé detected. Engineer profile ready to explore.';if(href.includes('github.com'))return 'Code repository link detected.';return `Navigation link found: ${short||'Explore destination'}.`}
+ const link=element.closest('a');if(link){const href=link.getAttribute('href')||'';if(href.startsWith('mailto:'))return 'Contact channel found: email Shivam.';if(href.includes('/resume/'))return 'Résumé detected. Developer profile ready to explore.';if(href.includes('github.com'))return 'Code repository link detected.';return `Navigation link found: ${short||'Explore destination'}.`}
  if(element.matches('button,summary'))return `Interactive control detected: ${short||'Button'}.`;
  return `Content identified: “${short||'Portfolio section'}”`;
 }
