@@ -36,5 +36,5 @@ function Reader({offset,paused}:{offset:number;paused:React.RefObject<boolean>})
 export default function HeroPatrol(){
  const paused=useRef(false);
  useEffect(()=>{const onPause=(e:Event)=>{paused.current=(e as CustomEvent<boolean>).detail};window.addEventListener('patrol-pause',onPause);return()=>window.removeEventListener('patrol-pause',onPause)},[]);
- return <div className="hero-patrol" aria-hidden="true"><Canvas orthographic camera={{position:[0,0,1000],zoom:1,near:.1,far:2000}} dpr={[1,1.5]}><ambientLight intensity={2}/><directionalLight position={[0,200,500]} intensity={2}/><Reader offset={0} paused={paused}/><Reader offset={1} paused={paused}/></Canvas></div>;
+ return <div className="hero-patrol" aria-hidden="true" inert><Canvas orthographic camera={{position:[0,0,1000],zoom:1,near:.1,far:2000}} dpr={[1,1.5]}><ambientLight intensity={2}/><directionalLight position={[0,200,500]} intensity={2}/><Reader offset={0} paused={paused}/><Reader offset={1} paused={paused}/></Canvas></div>;
 }
