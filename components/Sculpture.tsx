@@ -29,7 +29,7 @@ function Terminal({ mode, paused, run }: { mode: Mode; paused: boolean; run: num
     ctx.fillStyle = '#0d1b1e'; ctx.fillRect(0, 0, 1100, 760);
     ctx.fillStyle = '#273027'; ctx.fillRect(0, 0, 1100, 76);
     ['#ff6c85','#ffd56b','#c2f970'].forEach((color, i) => { ctx.fillStyle=color; ctx.beginPath(); ctx.arc(35+i*28,38,7,0,Math.PI*2);ctx.fill(); });
-    ctx.font = '20px monospace'; ctx.fillStyle = '#9cb8ac'; ctx.fillText('SY:// EARTH WORKSHOP', 150, 45);
+    ctx.font = '20px monospace'; ctx.fillStyle = '#9cb8ac'; ctx.fillText('spyy:// EARTH WORKSHOP', 150, 45);
     ctx.fillStyle = '#c2f970'; ctx.fillText('SIMULATION', 905, 45);
     const lines = scripts[mode]; let budget = Math.floor(clock.current * 37);
     ctx.font = '23px monospace';
