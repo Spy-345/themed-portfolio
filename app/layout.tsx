@@ -1,7 +1,7 @@
 import RoamingRobot from '../components/RoamingRobot';
 import CursorLight from '../components/CursorLight';
 import type { Metadata } from 'next';
-import { siteUrl, siteTitle, siteDescription, profileSchema } from '../lib/seo';
+import { siteUrl, siteTitle, siteDescription } from '../lib/seo';
 import './globals.css';
 import './movie-theme.css';
 
@@ -26,5 +26,5 @@ export const metadata: Metadata = {
   ...(process.env.GOOGLE_SITE_VERIFICATION ? {verification: {google: process.env.GOOGLE_SITE_VERIFICATION}} : {}),
 };
 export default function Layout({children}:{children:React.ReactNode}){
-  return <html lang="en"><head><script id="profile-structured-data" type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(profileSchema).replace(/</g,'\\u003c')}}/></head><body>{children}<CursorLight/><RoamingRobot/></body></html>;
+  return <html lang="en"><body>{children}<CursorLight/><RoamingRobot/></body></html>;
 }

@@ -10,7 +10,7 @@ The live homepage returned HTTP 200 and had a name/role title, basic description
 - Concise name/role/location title and a description mentioning verified Next.js, Node.js and Amazon Bedrock work.
 - Open Graph/Twitter metadata and updated social artwork highlighting Shivam’s name and role.
 - Linked WebSite, ProfilePage and Person JSON-LD, with verified employer, education, skills and social profiles.
-- Explicit index/follow directives, robots.txt and a sitemap containing the single homepage. Fragment sections are not separate search landing pages.
+- Explicit index/follow directives, robots.txt and a sitemap containing the homepage and services listing. Fragment sections are not separate search landing pages.
 - A visible introduction supporting the same expertise; duplicate text removed from decorative flip-letter backs.
 - Optional real Google HTML verification token via GOOGLE_SITE_VERIFICATION.
 
