@@ -1,3 +1,4 @@
+import PortfolioMotion from '../components/PortfolioMotion';
 import Logo from '../components/Logo';
 import { LuArrowUpRight, LuArrowDown, LuBraces, LuLayers, LuDatabase, LuSparkles } from 'react-icons/lu';
 import Image from 'next/image';
@@ -20,7 +21,7 @@ const skills = [
   { title: 'AI integration', icon: LuSparkles, description: 'Amazon Bedrock, prompt engineering, and LLM-powered application workflows.', tools: ['Amazon Bedrock'] },
 ];
 export default function Home() {
-  return <>
+  return <PortfolioMotion>
     <script id="profile-structured-data" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema).replace(/</g, '\\u003c') }} />
     <SiteHeader />
     <main id="main-content">
@@ -41,5 +42,5 @@ export default function Home() {
       <section id="about" aria-labelledby="about-title"><div><span className="eyebrow">04 / ABOUT ME</span><h2 id="about-title">Curiosity meets<br /><em>engineering.</em></h2></div><div className="about-copy"><p className="large-copy">I like understanding the whole system — and making the pieces work together.</p><p>Based in Pune, I work across React interfaces, backend APIs, databases, payments, and cloud deployments. My recent work brings language models into practical products with Amazon Bedrock.</p><p>A background in chemistry taught me to ask careful questions. Software gave me a way to build the answers.</p><div className="education"><div><span className="eyebrow">EDUCATION</span><h3>B.Sc. in Chemistry</h3><p>Fergusson College, Pune</p></div><div><span className="eyebrow">FURTHER LEARNING</span><h3>Full Stack Web Development</h3><p>100xDevs · Harkirat Singh</p></div></div></div></section>
       <section id="contact" aria-labelledby="contact-title"><div className="contact-heading"><span className="eyebrow">05 / LET’S CONNECT</span><span className="availability"><span aria-hidden="true" /> Open to opportunities</span></div><div className="contact-layout"><div><h2 id="contact-title">Looking for your next<br /><em>full stack developer?</em></h2><p>I’m open to full-time roles and meaningful projects. Let’s talk about your team, the challenges you’re solving, and where I can contribute.</p><a className="contact-email" href="mailto:yewleshivam.p@gmail.com">yewleshivam.p@gmail.com <LuArrowUpRight /></a></div><div className="contact-panel"><span className="eyebrow">START A CONVERSATION</span><a className="primary" href="mailto:yewleshivam.p@gmail.com?subject=Full-time%20role%20opportunity">Get in touch <LuArrowUpRight /></a><a className="secondary" href="/resume/shivam-yewle-resume.pdf" download>Download résumé <LuArrowDown /></a><CopyEmail /></div></div></section>
     </main><footer><a className="brand" href="#" aria-label="Shivam Yewle home"><Logo /></a><span>© {new Date().getFullYear()} Shivam Yewle</span><div><a href="https://github.com/Spy-345" target="_blank" rel="noreferrer">GitHub <LuArrowUpRight /></a><a href="https://www.linkedin.com/in/shivam-yewle/" target="_blank" rel="noreferrer">LinkedIn <LuArrowUpRight /></a><a href="mailto:yewleshivam.p@gmail.com">Email <LuArrowUpRight /></a></div></footer>
-  </>;
+  </PortfolioMotion>;
 }

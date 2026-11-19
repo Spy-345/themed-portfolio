@@ -1,6 +1,8 @@
 'use client';
 
 import { ToolIcons } from './TechIcon';
+import { motion } from 'motion/react';
+import useMotionPreference from './useMotionPreference';
 import { useEffect, useRef, useState } from 'react';
 
 type Step = { title: string; tool: string; detail: string; signal: string };
@@ -26,6 +28,7 @@ const journeys: Record<string, { mission: string; steps: Step[]; result: string;
 };
 export default function ProjectJourney({ id }: { id: string }) {
   const journey = journeys[id];
+  const reducedMotion = useMotionPreference();
   const [step, setStep] = useState(0);
   const [playing, setPlaying] = useState(false);
   const root = useRef<HTMLDivElement>(null);
@@ -48,7 +51,7 @@ export default function ProjectJourney({ id }: { id: string }) {
     <h4>{journey.mission}</h4>
     <div className="journey-progress" role="progressbar" aria-label="Walkthrough progress" aria-valuemin={0} aria-valuemax={4} aria-valuenow={step + 1}><span style={{ width: `${(step + 1) * 25}%` }}/></div>
     <ol className="flow-nodes" aria-label="Build stages">{journey.steps.map((item, index) => <li key={item.title} className={index <= step ? 'reached' : ''}><button type="button" aria-pressed={index === step} onClick={() => { setPlaying(false); setStep(index); }}><span className="node-icon"><ToolIcons tool={item.tool}/><span className="node-number">{index < step ? '✓' : index + 1}</span></span><span>{item.title}</span></button></li>)}</ol>
-    <div className={'step-detail' + (playing ? ' is-playing' : '')} aria-live="polite" aria-atomic="true"><span className="step-tool"><ToolIcons tool={current.tool}/>{current.tool}</span><p>{current.detail}</p><div className="signal" key={step}><span aria-hidden="true">↳</span> {current.signal}</div></div>
+    <motion.div key={step} initial={reducedMotion !== false ? false : { opacity: 0.6, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: reducedMotion !== false ? 0 : 0.2 }} className={'step-detail' + (playing ? ' is-playing' : '')} aria-live="polite" aria-atomic="true"><span className="step-tool"><ToolIcons tool={current.tool}/>{current.tool}</span><p>{current.detail}</p><div className="signal" key={step}><span aria-hidden="true">↳</span> {current.signal}</div></motion.div>
     {step === 3 && <div className="flow-result"><span aria-hidden="true">✳</span> {journey.result}</div>}
     <div className="journey-controls"><button type="button" className="run-flow" onClick={() => { if (!playing && step === 3) setStep(0); setPlaying(!playing); }}>{playing ? 'Ⅱ Pause' : step === 3 ? '↻ Replay flow' : '▷ Play flow'}</button><button type="button" disabled={step === 0} onClick={() => { setPlaying(false); setStep(step - 1); }} aria-label="Previous build stage">←</button><button type="button" disabled={step === 3} onClick={() => { setPlaying(false); setStep(step + 1); }} aria-label="Next build stage">→</button></div>
     <small className="journey-source">{journey.source}</small>

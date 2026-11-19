@@ -13,6 +13,7 @@
     "audit:mobile": "node scripts/mobile-audit.mjs"
   },
   "dependencies": {
+    "motion": "^14.14.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",

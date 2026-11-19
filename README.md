@@ -28,3 +28,7 @@ Production SEO settings live in `lib/seo.ts` and `app/layout.tsx`. The site publ
 After deployment, verify `spyy.xyz` in Google Search Console (prefer DNS verification), submit `https://spyy.xyz/sitemap.xml`, and use URL Inspection to request homepage indexing. If using HTML-tag verification, set `GOOGLE_SITE_VERIFICATION` in Vercel to the exact verification token Google provides, then redeploy. No token is fabricated or required for normal site operation. Vercel preview deployments may remain noindex through Vercel’s response headers.
 
 Metadata and structured data improve clarity and discovery; they do not guarantee indexing, rich results, or rankings. Monitor Search Console queries and indexing. Dedicated substantive case studies and reputable profile links back to this domain are the next opportunities for broader role/technology searches.
+
+## Motion
+
+Motion for React adds short hero entrances, once-per-entry section reveals, case-study opening transitions, and walkthrough stage transitions. Native CSS smooth scrolling keeps wheel, touch, anchors, and browser history intact. All animation is skipped for reduced-motion preferences; content is visible before hydration and with JavaScript disabled. Edit timings and reveal targets in `components/PortfolioMotion.tsx`.

@@ -22,3 +22,10 @@ header{position:sticky;top:0;z-index:30;background:#0b0f17f5;backdrop-filter:blu
 .brand{display:inline-flex;align-items:center;justify-content:center;min-height:44px;flex-shrink:0;line-height:0}
 .spy-logo{display:block;width:96px;height:47px;overflow:visible}.logo-letters{stroke:var(--fg)}.logo-accent{stroke:var(--accent)}.logo-frame{stroke:var(--accent);opacity:.55;transition:opacity .2s}.brand:hover .logo-frame{opacity:1}
 @media(max-width:700px){.spy-logo{width:79px;height:40px}header{gap:14px}}
+/* Small interaction cues complement Motion's entrance and scroll reveals. */
+@media(prefers-reduced-motion:no-preference){
+.primary,.secondary{transition:background .2s,border-color .2s,color .2s,transform .2s}
+.primary:hover,.secondary:hover{transform:translateY(-2px)}
+.project-links a svg,.text-link svg,.hero-socials a svg{transition:transform .2s}
+.project-links a:hover svg,.text-link:hover svg,.hero-socials a:hover svg{transform:translate(2px,-2px)}
+}
