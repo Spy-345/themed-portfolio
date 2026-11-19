@@ -18,7 +18,7 @@ No keyword meta tag was added: Google does not use it for ranking. No fabricated
 
 ## Verification
 
-Production build checks metadata generation and both crawl endpoints. Automated tests check server-rendered canonical metadata, parseable JSON-LD, robots.txt, sitemap.xml and the social image. Existing mobile and animated-hero interaction tests remain part of the suite.
+Production build checks metadata generation and both crawl endpoints. Automated tests check server-rendered canonical metadata, parseable JSON-LD, robots.txt, sitemap.xml and the social image. Existing mobile and project walkthrough interaction tests remain part of the suite.
 
 ## Owner steps after deployment
 

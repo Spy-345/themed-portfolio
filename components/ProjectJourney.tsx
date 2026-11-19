@@ -44,12 +44,12 @@ export default function ProjectJourney({ id }: { id: string }) {
   }, [playing, step, journey.steps.length]);
   const current = journey.steps[step];
   return <div ref={root} className={'journey journey-' + id}>
-    <span className="project-beacon" aria-hidden="true"><span className="beacon-halo"/><span className="beacon-dome"><span/></span><span className="beacon-base"/></span><div className="journey-head"><span>BUILD LOG / {id}</span><span>{String(step + 1).padStart(2, '0')} / 04</span></div>
+    <div className="journey-head"><span>ARCHITECTURE / {id}</span><span>{String(step + 1).padStart(2, '0')} / 04</span></div>
     <h4>{journey.mission}</h4>
     <div className="journey-progress" role="progressbar" aria-label="Walkthrough progress" aria-valuemin={0} aria-valuemax={4} aria-valuenow={step + 1}><span style={{ width: `${(step + 1) * 25}%` }}/></div>
     <ol className="flow-nodes" aria-label="Build stages">{journey.steps.map((item, index) => <li key={item.title} className={index <= step ? 'reached' : ''}><button type="button" aria-pressed={index === step} onClick={() => { setPlaying(false); setStep(index); }}><span className="node-icon"><ToolIcons tool={item.tool}/><span className="node-number">{index < step ? '✓' : index + 1}</span></span><span>{item.title}</span></button></li>)}</ol>
     <div className={'step-detail' + (playing ? ' is-playing' : '')} aria-live="polite" aria-atomic="true"><span className="step-tool"><ToolIcons tool={current.tool}/>{current.tool}</span><p>{current.detail}</p><div className="signal" key={step}><span aria-hidden="true">↳</span> {current.signal}</div></div>
-    {step === 3 && <div className="quest-complete"><span aria-hidden="true">✳</span> {journey.result}</div>}
+    {step === 3 && <div className="flow-result"><span aria-hidden="true">✳</span> {journey.result}</div>}
     <div className="journey-controls"><button type="button" className="run-flow" onClick={() => { if (!playing && step === 3) setStep(0); setPlaying(!playing); }}>{playing ? 'Ⅱ Pause' : step === 3 ? '↻ Replay flow' : '▷ Play flow'}</button><button type="button" disabled={step === 0} onClick={() => { setPlaying(false); setStep(step - 1); }} aria-label="Previous build stage">←</button><button type="button" disabled={step === 3} onClick={() => { setPlaying(false); setStep(step + 1); }} aria-label="Next build stage">→</button></div>
     <small className="journey-source">{journey.source}</small>
   </div>;

@@ -1,9 +1,6 @@
-import RoamingRobot from '../components/RoamingRobot';
-import CursorLight from '../components/CursorLight';
 import type { Metadata } from 'next';
 import { siteUrl, siteTitle, siteDescription } from '../lib/seo';
 import './globals.css';
-import './movie-theme.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -26,5 +23,5 @@ export const metadata: Metadata = {
   ...(process.env.GOOGLE_SITE_VERIFICATION ? {verification: {google: process.env.GOOGLE_SITE_VERIFICATION}} : {}),
 };
 export default function Layout({children}:{children:React.ReactNode}){
-  return <html lang="en"><body>{children}<CursorLight/><RoamingRobot/></body></html>;
+  return <html lang="en"><body>{children}</body></html>;
 }

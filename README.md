@@ -1,6 +1,6 @@
 # Shivam Yewle Portfolio
 
-Next.js, TypeScript, Tailwind CSS and a client-rendered Three.js sculpture.
+Next.js, TypeScript and Tailwind CSS. A recruiter-focused portfolio with project architecture walkthroughs, grouped technical skills, experience, and direct résumé access.
 
 ## Run
 
@@ -13,9 +13,9 @@ pnpm dev
 
 Open http://localhost:3001. Validate with `pnpm typecheck`, `pnpm lint`, and `pnpm build`; serve a build with `pnpm start`.
 
-Edit portfolio copy and project data in app/page.tsx. Replace public/resume/shivam-yewle-resume.pdf to update the downloadable résumé. The hero scene lives in components/Sculpture.tsx. It pauses outside the viewport and on hidden tabs and uses a static fallback for reduced motion or rendering failures.
+Edit portfolio copy and project data in app/page.tsx. Replace public/resume/shivam-yewle-resume.pdf to update the downloadable résumé. Project walkthroughs live in components/ProjectJourney.tsx. Playback is opt-in and pauses outside the viewport or on hidden tabs.
 
-Employer project descriptions come from the supplied résumé. Project graphics are illustrative, not product screenshots. No contact backend or credentials are required. Production metadata and canonical URLs use https://spyy.xyz.
+Employer project descriptions come from the supplied résumé. Professional project previews use screenshots of the current public websites captured in November 2026; they do not imply sole authorship of the entire product. Backend previews are labeled architecture overviews. Expand each case study to read the problem, approach, outcome, and architecture walkthrough. No contact backend or credentials are required. Production metadata and canonical URLs use https://spyy.xyz.
 
 ## Mobile checks
 
