@@ -23,12 +23,8 @@ Employer project descriptions come from the supplied résumé. Project graphics 
 
 ## Search visibility
 
-Production SEO settings live in `lib/seo.ts` and `app/layout.tsx`. The site publishes `/robots.txt`, `/sitemap.xml`, social previews, and linked WebSite/ProfilePage/Person JSON-LD. Keep profile facts and social URLs current. The sitemap lists the homepage and services page; section anchors are not standalone pages.
+Production SEO settings live in `lib/seo.ts` and `app/layout.tsx`. The site publishes `/robots.txt`, `/sitemap.xml`, social previews, and linked WebSite/ProfilePage/Person JSON-LD. Keep profile facts and social URLs current. The sitemap lists the homepage; section anchors are not standalone pages.
 
 After deployment, verify `spyy.xyz` in Google Search Console (prefer DNS verification), submit `https://spyy.xyz/sitemap.xml`, and use URL Inspection to request homepage indexing. If using HTML-tag verification, set `GOOGLE_SITE_VERIFICATION` in Vercel to the exact verification token Google provides, then redeploy. No token is fabricated or required for normal site operation. Vercel preview deployments may remain noindex through Vercel’s response headers.
 
 Metadata and structured data improve clarity and discovery; they do not guarantee indexing, rich results, or rankings. Monitor Search Console queries and indexing. Dedicated substantive case studies and reputable profile links back to this domain are the next opportunities for broader role/technology searches.
-
-## Services
-
-`/services` lists Custom Business Websites, Graphic Design, Basic Video Editing, and Mobile App Development. Edit offerings and enquiry subjects in `lib/services.ts`; the homepage overview uses the same data. Generated demo artwork lives in `public/images/services/`. All four examples are clearly labeled illustrative concepts, not client engagements or functional live products. No pricing or delivery promises are hard-coded. Services has its own canonical metadata and structured service catalog, and is included in the sitemap.
